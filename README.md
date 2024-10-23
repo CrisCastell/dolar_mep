@@ -19,4 +19,4 @@ Para levantar el proyecto, seguir los siguientes pasos:
 
 ```bash
 docker build -t dolar_mep_app .
-docker run -d -p 8000:8000 --name dolar_mep_app dolar_mep
+docker run -d -p 8000:8000 --name dolar_mep_app dolar_mep_app
