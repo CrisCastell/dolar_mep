@@ -13,7 +13,7 @@ Esta aplicacion con **FastAPI** simula la compra **compra** y **venta** de bonos
 
 Para levantar el proyecto, seguir los siguientes pasos:
 - Clonar este repositorio
-- Pegar el archivo .env enviado a traves de correo que contiene las credenciales de reMarket
+- Agregar a la raiz del proyecto el archivo .env enviado a traves de correo que contiene las credenciales de reMarket
 - Abrir la terminal y ubicarse a la altura de main.py
 - Ejecutar los siguientes comandos de docker
 
