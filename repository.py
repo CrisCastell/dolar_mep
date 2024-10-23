@@ -1,6 +1,6 @@
 import requests
-from token_store import auth_token
-
+import token_store
+from fastapi import HTTPException
 
 class BonosRepository:
     REMARKETS_URL = "https://api.remarkets.primary.com.ar/rest/instruments/detail"
@@ -9,8 +9,11 @@ class BonosRepository:
         """
         Obtiene el precio actual del bono desde ReMarkets.
         """
+        if token_store.auth_token is None:
+            raise HTTPException(status_code=500, detail="Token de autenticación no disponible.")
+        
         params = {'symbol': codigo_bono, 'marketId': 'ROFX'}
-        headers = {'X-Auth-Token': f'{auth_token}'}
+        headers = {'X-Auth-Token': f'{token_store.auth_token}'}
         response = requests.get(self.REMARKETS_URL, params=params, headers=headers)
         
         if response.status_code != 200:
